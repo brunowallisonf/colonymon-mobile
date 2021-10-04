@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView } from "react-native"
+import { Text, StyleSheet, View, TextInput } from "react-native"
 import DateTimePicker from "react-native-datepicker"
 import LabeledNumberInput from '../../components/LabeledNumberInput'
 import StepButton from '../../components/StepButton'

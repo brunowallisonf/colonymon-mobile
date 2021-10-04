@@ -47,7 +47,7 @@ export default function Login({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text style={styles.new_button}>Inscreva-se</Text>
+          <Text style={styles.new_button} onPress={() => navigation.navigate("Signup")}>Inscreva-se</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("BroodInfo")}>
