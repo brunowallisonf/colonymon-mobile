@@ -6,14 +6,15 @@ export const SubmitButton = styled.TouchableOpacity`
     background: #FF6000;
     border-radius: 10px
     width: 100%;
-    align-items: center;
-    justify-content:center;
+    justify-content: center;
     height: 40px;
     
 `
 
 export const SubmitButtonLabel = styled.Text`
-    font-size: 20px;
+    font-size: 25px;
     width: 100%;
-    
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF
 `
