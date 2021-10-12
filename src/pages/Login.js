@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -11,17 +11,40 @@ import {
   ScrollView
 } from "react-native";
 const logo2 = require("../assets/logo2.png");
-
+import api from "../services/api"
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  useEffect(() => {
+    const verifyToken = async () => {
+      const token = await AsyncStorage.getItem("@token_key")
+      if (token) {
+        navigation.navigate("BroodInfo")
+      }
+    }
+    verifyToken()
 
+  }
+
+    , [])
+  const handleLogin = async () => {
+    let data = {}
+    try {
+      data = await api.post("/sessions", { email, password: senha })
+    } catch (error) {
+      alert("Usuario ou senha inválidos")
+    }
+    if (data.status === 200) {
+      await AsyncStorage.setItem("@token_key", data.data.token);
+      navigation.navigate("BroodInfo")
+    }
+  }
   return (
     <ScrollView>
       <View style={styles.container}>
         <Image style={styles.image} source={logo2} />
         <StatusBar backgroundColor="#FFD700"></StatusBar>
-
 
         <View style={styles.inputView}>
           <TextInput
@@ -50,7 +73,7 @@ export default function Login({ navigation }) {
           <Text style={styles.new_button} onPress={() => navigation.navigate("Signup")}>Inscreva-se</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("BroodInfo")}>
+        <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
       </View>

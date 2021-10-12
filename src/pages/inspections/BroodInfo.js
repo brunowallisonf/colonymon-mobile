@@ -1,41 +1,35 @@
 
 import React from 'react'
-import { Text, StyleSheet, View, TextInput } from "react-native"
+import { Text, StyleSheet, View, TextInput, ScrollView } from "react-native"
 import DateTimePicker from "react-native-datepicker"
+import { useState } from 'react/cjs/react.development'
+import { Input } from '../../components/Input/styles'
 import LabeledNumberInput from '../../components/LabeledNumberInput'
 import StepButton from '../../components/StepButton'
 
 export default function BroodInfo() {
+    const [inspectionDate, setInspectionDate] = useState("")
 
-    return (<View style={styles.container}>
+    const handleDateChange = (value) => {
+        const newDate = value.replace(/[^0-9|\/]/, "").slice(0, 10).replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3")
+        setInspectionDate(newDate)
 
-        <Text style={styles.title}>Informacões gerais</Text>
+    }
+    return (
+        <ScrollView style={styles.scroll}>
+            <View style={styles.container}>
+                <Text style={styles.title}>Informacões gerais</Text>
+                <Input placeholder="Data da inspeção" placeholderTextColor="#000000" onChangeText={handleDateChange} value={inspectionDate}></Input>
+                <Input placeholder="Id do Apiário" placeholderTextColor="#000000" place></Input>
+                <Input placeholder="Id da colméia" placeholderTextColor="#000000" place></Input>
+                <Input placeholder="Obsevador" placeholderTextColor="#000000" place></Input>
+                <Input placeholder="Registrador" placeholderTextColor="#000000" place></Input>
+                <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 1"} keyboardType="numeric"></LabeledNumberInput>
+                <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 2"} keyboardType="numeric"></LabeledNumberInput>
+                <View style={styles.footerControls}><StepButton value="Continuar"></StepButton></View>
 
-        <View>
-            <View style={styles.fieldContainer}>
-                <Text style={styles.fieldLabel}>Data da inspeção: </Text><DateTimePicker style={styles.field} />
-            </View>
-            <View style={styles.fieldContainer}>
-                <TextInput placeholder="Id do Apiário" style={styles.textInput} placeholderTextColor="#000000" place></TextInput>
-            </View>
-            <View style={styles.fieldContainer}>
-                <TextInput placeholder="Id da colméia" style={styles.textInput} placeholderTextColor="#000000" place></TextInput>
-            </View>
-            <View style={styles.fieldContainer}>
-                <TextInput placeholder="Obsevador" style={styles.textInput} placeholderTextColor="#000000" place></TextInput>
-            </View>
-            <View style={styles.fieldContainer}>
-                <TextInput placeholder="Registrador" style={styles.textInput} placeholderTextColor="#000000" place></TextInput>
-            </View>
-            <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 1"} keyboardType="number"></LabeledNumberInput>
-            <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 2"} keyboardType="number"></LabeledNumberInput>
-
-        </View>
-
-        <View style={styles.footerControls}><StepButton value="Continuar"></StepButton></View>
-
-    </View >)
-
+            </View >
+        </ScrollView>)
 
 }
 
@@ -46,14 +40,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#FFD700",
         alignItems: "center",
-        justifyContent: "center"
+
     },
     title: {
         fontSize: 25
     },
     fieldLabel: {
         fontSize: 20,
-
         fontWeight: "bold"
     },
     fieldContainer: {
@@ -76,11 +69,13 @@ const styles = StyleSheet.create({
     },
     footerControls: {
         flexDirection: "row",
-        marginTop: 10,
+        alignItems: "center",
+        justifyContent: "center",
+        height: 80
     },
-
     scroll: {
         flex: 1,
-        paddingBottom: 100,
+        backgroundColor: "#FFD700"
     }
+
 })

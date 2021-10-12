@@ -6,9 +6,10 @@ export const StepButton = styled.TouchableOpacity`
     background: #FF6000;
     border-radius: 10px
     width: 160px;
-    height: 40%;
+    height: 70%;
     align-items: center;
     justify-content:center;
+    
 `
 
 export const StepButtonLabel = styled.Text`

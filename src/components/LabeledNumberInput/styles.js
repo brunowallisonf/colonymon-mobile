@@ -18,4 +18,5 @@ export const LabeledInputView = styled.View`
     flex-direction: column;
     align-items:center;
     margin-botton: 20px;
+    width: 100%;
 `

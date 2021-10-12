@@ -1,11 +1,12 @@
 import React, { useState } from "react"
-import { TextLabel, TextField, LabeledInputView } from "./styles"
+import { Input } from "../Input/styles"
+import { TextLabel, LabeledInputView } from "./styles"
 
 
 export default function LabeledInput({ labelValue, keyboardType }) {
 
     return (<LabeledInputView>
         <TextLabel >{labelValue}</TextLabel>
-        <TextField keyboardType={keyboardType}></TextField>
+        <Input keyboardType={keyboardType}></Input>
     </LabeledInputView>)
 }
