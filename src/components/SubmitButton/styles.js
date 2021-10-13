@@ -5,9 +5,10 @@ import styled from "styled-components/native"
 export const SubmitButton = styled.TouchableOpacity`
     background: #FF6000;
     border-radius: 10px
-    width: 100%;
+    width: 90%;
     justify-content: center;
-    height: 40px;
+    height: 50px;
+    margin-top: 10px;
     
 `
 
