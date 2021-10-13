@@ -37,9 +37,9 @@ export default function Signup({ navigation }) {
             <InputContainer>
                 <PageTitle value={"Cadastro"}></PageTitle>
 
-                <Input placeholder="Nome" placeholderTextColor="#000000" onChangeText={setName}></Input>
-                <Input placeholder="Email" placeholderTextColor="#000000" onChangeText={setEmail}></Input>
-                <Input placeholder="Password" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={setPassword}></Input>
+                <Input placeholder="Nome" placeholderTextColor="#000000" onChangeText={(value) => setName(value)}></Input>
+                <Input placeholder="Email" placeholderTextColor="#000000" onChangeText={(value) => setEmail(value)}></Input>
+                <Input placeholder="Password" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={(value) => setPassword(value)}></Input>
                 <SubmitButton value={"Cadastrar"} onPress={handleSumbit}></SubmitButton>
             </InputContainer>
         </View >
