@@ -5,6 +5,6 @@ export const View = styled.View`
     background: #FFD700;
     align-items: center;
     padding-vertical: 30px;
-   
+    justify-content: space-between;
 `
 
