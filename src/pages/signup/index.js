@@ -25,12 +25,9 @@ export default function Signup({ navigation }) {
                 navigation.navigate("Login");
                 return
             }
-
-
         } catch (error) {
             alert("O usuário já existe")
         }
-
     }
     return (
         <View style={styles.container}>
@@ -39,7 +36,7 @@ export default function Signup({ navigation }) {
 
                 <Input placeholder="Nome" placeholderTextColor="#000000" onChangeText={(value) => setName(value)}></Input>
                 <Input placeholder="Email" placeholderTextColor="#000000" onChangeText={(value) => setEmail(value)}></Input>
-                <Input placeholder="Password" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={(value) => setPassword(value)}></Input>
+                <Input placeholder="Senha" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={(value) => setPassword(value)}></Input>
                 <SubmitButton value={"Cadastrar"} onPress={handleSumbit}></SubmitButton>
             </InputContainer>
         </View >
