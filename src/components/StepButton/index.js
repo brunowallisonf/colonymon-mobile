@@ -2,6 +2,6 @@ import React from "react";
 import { StepButton, StepButtonLabel } from "./styles"
 
 
-export default function ({ value }) {
-    return (<StepButton><StepButtonLabel>{value}</StepButtonLabel></StepButton>)
+export default function ({ value, ...props }) {
+    return (<StepButton {...props}><StepButtonLabel>{value}</StepButtonLabel></StepButton>)
 }

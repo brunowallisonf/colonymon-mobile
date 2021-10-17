@@ -7,7 +7,7 @@ import { Input } from '../../components/Input/styles'
 import LabeledNumberInput from '../../components/LabeledNumberInput'
 import StepButton from '../../components/StepButton'
 
-export default function BroodInfo() {
+export default function BroodInfo({ navigation }) {
     const [inspectionDate, setInspectionDate] = useState("")
 
     const handleDateChange = (value) => {
@@ -26,7 +26,7 @@ export default function BroodInfo() {
                 <Input placeholder="Registrador" placeholderTextColor="#000000" place></Input>
                 <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 1"} keyboardType="numeric"></LabeledNumberInput>
                 <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 2"} keyboardType="numeric"></LabeledNumberInput>
-                <View style={styles.footerControls}><StepButton value="Continuar"></StepButton></View>
+                <View style={styles.footerControls}><StepButton value="Continuar" onPress={() => navigation.navigate("InspectionItem")}></StepButton></View>
 
             </View >
         </ScrollView>)

@@ -6,5 +6,6 @@ export const View = styled.View`
 
 export const Title = styled.Text`
     font-size: 25px;
+    font-weight: bold;
 `
 
