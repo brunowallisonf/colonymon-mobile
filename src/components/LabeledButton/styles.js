@@ -9,5 +9,5 @@ export const TouchableOpacity = styled.TouchableOpacity`
 
 export const Text = styled.Text`
     font-size: 25px
-    margin-botton: 30px;
+   
 `

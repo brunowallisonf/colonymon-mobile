@@ -9,6 +9,6 @@ export const Input = styled.TextInput`
     margin-top: 10px;
     height: 200px;
     text-align: left;
-    resize: none;
+   
     text-align-vertical: top;
 `

@@ -4,8 +4,9 @@ import PageTitle from "../../components/PageTitle"
 import Input from "../../components/Input"
 import SubmitButton from "../../components/SubmitButton"
 import { View, StyleSheet } from "react-native"
-import { useState } from "react/cjs/react.development"
+import { useState } from "react"
 import api from "../../services/api"
+import Container from "../../components/Container"
 
 
 export default function Signup({ navigation }) {
@@ -25,29 +26,23 @@ export default function Signup({ navigation }) {
                 navigation.navigate("Login");
                 return
             }
+
         } catch (error) {
             alert("O usuário já existe")
         }
     }
     return (
-        <View style={styles.container}>
-            <InputContainer>
-                <PageTitle value={"Cadastro"}></PageTitle>
+        <Container>
 
-                <Input placeholder="Nome" placeholderTextColor="#000000" onChangeText={(value) => setName(value)}></Input>
-                <Input placeholder="Email" placeholderTextColor="#000000" onChangeText={(value) => setEmail(value)}></Input>
-                <Input placeholder="Senha" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={(value) => setPassword(value)}></Input>
-                <SubmitButton value={"Cadastrar"} onPress={handleSumbit}></SubmitButton>
-            </InputContainer>
-        </View >
+            <PageTitle value={"Cadastro"}></PageTitle>
+            <Input placeholder="Nome" placeholderTextColor="#000000" onChangeText={(value) => setName(value)}></Input>
+            <Input placeholder="Email" placeholderTextColor="#000000" onChangeText={(value) => setEmail(value)}></Input>
+            <Input placeholder="Senha" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={(value) => setPassword(value)}></Input>
+            <SubmitButton value={"Cadastrar"} onPress={() => handleSumbit()}></SubmitButton>
+
+        </Container >
     )
 
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#FFD700",
-        padding: 15
-    }
-})
+
 

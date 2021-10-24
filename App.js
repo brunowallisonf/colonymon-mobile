@@ -7,7 +7,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Signup from './src/pages/signup';
 import InspectionItem from './src/pages/InspectionItem';
+import { SafeAreaView } from "react-native"
 const Stack = createNativeStackNavigator();
+import InspectionItems from './src/constants/InspectionItems';
 function App() {
   return (
     <NavigationContainer>
@@ -20,7 +22,10 @@ function App() {
         />
         <Stack.Screen name="BroodInfo" component={BroodInfo} />
         <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="InspectionItem" component={InspectionItem} />
+        {InspectionItems.map((value, index, array) => (<Stack.Screen key={`inspectionItem-${index}`} name={`inspectionItem-${index}`}  >
+          {props => <InspectionItem {...{ ...props, ...value, itemIndex: index, isLastItem: index === array.length - 1 }}></InspectionItem>}
+        </Stack.Screen>))}
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -19,7 +19,7 @@ import SubmitButton from "../components/SubmitButton";
 import Container from "../components/Container";
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [senha, setPassword] = useState("");
   useEffect(() => {
     const verifyToken = async () => {
       const token = await AsyncStorage.getItem("@token_key")
@@ -50,7 +50,7 @@ export default function Login({ navigation }) {
       <Container>
         <Image style={styles.image} source={logo2} />
         <StatusBar backgroundColor="#FFD700"></StatusBar>
-        <Input placeholder="Email" keyboardType="email-address" placeholderTextColor="#000000" autoCapitalize='none' onChangeText={(value) => setEmail(value)}></Input>
+        <Input placeholder="Email" placeholderTextColor="#000000" autoCapitalize='none' onChangeText={(value) => setEmail(value)}></Input>
         <Input placeholder="Senha" placeholderTextColor="#000000" secureTextEntry={true} onChangeText={(value) => setPassword(value)}></Input>
 
         <LabeledButton value="Esqueceu a senha"></LabeledButton>
