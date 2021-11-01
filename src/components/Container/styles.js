@@ -5,6 +5,6 @@ export const View = styled.SafeAreaView`
     background: #FFD700;
     align-items: center;
     padding-vertical: 30px;
-   
+    height: 100%;
 `
 

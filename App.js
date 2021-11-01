@@ -5,9 +5,9 @@ import Login from "./src/pages/Login"
 import BroodInfo from './src/pages/BroodInfo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Signup from './src/pages/signup';
+import Signup from './src/pages/Signup';
 import InspectionItem from './src/pages/InspectionItem';
-import { SafeAreaView } from "react-native"
+
 const Stack = createNativeStackNavigator();
 import InspectionItems from './src/constants/InspectionItems';
 function App() {

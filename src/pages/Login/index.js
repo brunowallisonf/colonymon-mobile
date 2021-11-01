@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
-  Text,
-  View,
+
   Image,
-  TextInput,
-  Button,
-  TouchableOpacity,
+
   StatusBar,
   ScrollView
 } from "react-native";
-import Input from "../components/Input"
-const logo2 = require("../assets/logo2.png");
-import api from "../services/api"
+import Input from "../../components/Input"
+const logo2 = require("../../assets/logo2.png");
+import api from "../../services/api"
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import LabeledButton from "../components/LabeledButton";
-import SubmitButton from "../components/SubmitButton";
-import Container from "../components/Container";
+import LabeledButton from "../../components/LabeledButton";
+import SubmitButton from "../../components/SubmitButton";
+import Container from "../../components/Container";
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setPassword] = useState("");
@@ -72,8 +69,5 @@ const styles = StyleSheet.create({
   image: {
     marginBottom: 5,
   },
-
-
-
 
 });

@@ -1,9 +1,8 @@
 import React from "react"
-import { View as InputContainer } from "./styles"
 import PageTitle from "../../components/PageTitle"
 import Input from "../../components/Input"
 import SubmitButton from "../../components/SubmitButton"
-import { View, StyleSheet } from "react-native"
+
 import { useState } from "react"
 import api from "../../services/api"
 import Container from "../../components/Container"

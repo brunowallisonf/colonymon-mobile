@@ -18,3 +18,4 @@ export const ScrollView = styled.ScrollView`
     flex: 1;
 
 `
+

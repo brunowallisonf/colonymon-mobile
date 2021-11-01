@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Text, StyleSheet, View, TextInput, ScrollView } from "react-native"
-import DateTimePicker from "react-native-datepicker"
+
 import { useState } from 'react'
 import { Input } from '../../components/Input/styles'
 import LabeledNumberInput from '../../components/LabeledNumberInput'
