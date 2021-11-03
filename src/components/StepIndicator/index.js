@@ -1,6 +1,8 @@
 import React, { userEffect } from "react";
-import { View } from "../Container/styles";
-import { StepItem } from "../StepItem"
+import { StepGroup } from "./styles";
+import StepItem from "../StepItem"
+
 export default function ({ actualStep, numberOfSteps }) {
-    return <View>{Array(5).keys().map(value, index => (<StepItem label={index + 1}></StepItem>))}</View>
+
+    return <StepGroup>{[...Array(5).keys()].map((val, idx) => <StepItem label={idx + 1} selected={idx === actualStep}></StepItem>)}</StepGroup>
 }

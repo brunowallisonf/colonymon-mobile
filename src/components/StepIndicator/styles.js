@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-const stepItem = styled.View`
-    width: 50px;
-    height: 50px;
+export const StepGroup = styled.View`
+    flex-direction: row;
+    height: 30px;
+    flex:1;
     
 `
+
+

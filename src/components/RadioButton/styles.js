@@ -6,7 +6,7 @@ export const RadioButton = styled.TouchableOpacity`
     border-radius: 100px;
     border-width: 2px;
     border-color: #000000;
-    background: #FFFFFF
+    background: #FFFFFF;
     align-items: center;
     justify-content: center;
   

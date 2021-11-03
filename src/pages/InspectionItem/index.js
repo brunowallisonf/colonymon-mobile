@@ -8,6 +8,7 @@ import TextArea from "../../components/TextArea"
 import StepButton from "../../components/StepButton"
 import { Alert } from "react-native"
 import RadioButton from "../../components/RadioButton"
+import StepIndicator from '../../components/StepIndicator'
 export default function (props) {
     const [metConditions, setMetCondition] = useState("yes")
     const handleStepButton = () => {
@@ -30,6 +31,7 @@ export default function (props) {
         <ScrollView>
             <Container>
                 <Label>{props.question}</Label>
+
                 <RadioGroup><RadioButton checked={metConditions === "yes"} label="Sim"
                     onPress={() => setMetCondition("yes")}></RadioButton><RadioButton checked={metConditions === "no"} label="Não" onPress={() => setMetCondition("no")}>
                     </RadioButton><RadioButton checked={metConditions === "non-applicable"} label="N/A" onPress={() => setMetCondition("non-applicable")}>

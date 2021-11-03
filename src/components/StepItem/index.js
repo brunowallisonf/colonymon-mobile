@@ -1,6 +1,7 @@
 import React from "react";
-import { StepItem } from "./styles";
+import { StepItem, Text } from "./styles";
 
-export default function ({ label }) {
-    return <StepItem><Text>{label}</Text></StepItem>
+export default function ({ label, selected }) {
+
+    return <StepItem selected={selected}><Text selected={selected}>{label}</Text></StepItem>
 }

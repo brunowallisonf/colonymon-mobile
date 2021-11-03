@@ -8,6 +8,7 @@ import LabeledNumberInput from '../../components/LabeledNumberInput'
 import PageTitle from '../../components/PageTitle'
 import StepButton from '../../components/StepButton'
 
+
 export default function BroodInfo({ navigation, }) {
     const [inspectionDate, setInspectionDate] = useState("")
 
@@ -20,6 +21,7 @@ export default function BroodInfo({ navigation, }) {
         <ScrollView style={styles.scroll}>
 
             <View style={styles.container}>
+
                 <PageTitle value="Informações Gerais"></PageTitle>
                 <Input placeholder="Data da inspeção" placeholderTextColor="#000000" onChangeText={handleDateChange} value={inspectionDate}></Input>
                 <Input placeholder="Id do Apiário" placeholderTextColor="#000000" place></Input>
@@ -28,10 +30,11 @@ export default function BroodInfo({ navigation, }) {
                 <Input placeholder="Registrador" placeholderTextColor="#000000" place></Input>
                 <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 1"} keyboardType="numeric"></LabeledNumberInput>
                 <LabeledNumberInput labelValue={"Numero de frames na caixa de enxames 2"} keyboardType="numeric"></LabeledNumberInput>
+
                 <View style={styles.footerControls}><StepButton value="Continuar" onPress={() => navigation.navigate("inspectionItem-0")}></StepButton></View>
 
             </View >
-        </ScrollView>)
+        </ScrollView >)
 
 }
 
