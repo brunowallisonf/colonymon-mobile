@@ -19,10 +19,25 @@ export default function Login({ navigation }) {
   const [senha, setPassword] = useState("");
   useEffect(() => {
     const verifyToken = async () => {
+
       const token = await AsyncStorage.getItem("@token_key")
-      if (token) {
-        navigation.navigate("BroodInfo")
+      if (!token) {
+        return;
       }
+      try {
+        const { status } = await api.get("/sessions/verify", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        if (status === 200) {
+          navigation.navigate("BroodInfo")
+        }
+      } catch (error) {
+        await AsyncStorage.removeItem("@token_key")
+
+      }
+
     }
     verifyToken()
 

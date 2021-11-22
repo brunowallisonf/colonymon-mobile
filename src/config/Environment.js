@@ -1,5 +1,5 @@
 
-export const DEV = false;
+export const DEV = true;
 
 export default {
     staging: {
