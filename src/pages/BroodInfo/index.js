@@ -8,7 +8,6 @@ import LabeledNumberInput from '../../components/LabeledNumberInput'
 import PageTitle from '../../components/PageTitle'
 import StepButton from '../../components/StepButton'
 
-
 export default function BroodInfo({ navigation, }) {
     const [inspectionDate, setInspectionDate] = useState("")
     const [apiaryId, setApiaryId] = useState("")

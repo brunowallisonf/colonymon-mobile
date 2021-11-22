@@ -36,6 +36,7 @@ export default function (props) {
                                         Authorization: `Bearer ${await AsyncStorage.getItem("@token_key")}`
                                     }
                                 })
+                                props.navigation.navigate("MyInspections")
                             } catch (error) {
                                 console.log(error.response)
                             }

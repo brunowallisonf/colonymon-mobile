@@ -12,6 +12,7 @@ import StepIndicator from "./src/components/StepIndicator"
 const Stack = createNativeStackNavigator();
 import InspectionItems from './src/constants/InspectionItems';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MyInspections from './src/pages/MyInspections';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         {InspectionItems.map((value, index, array) => (<Stack.Screen key={`inspectionItem-${index}`} name={`inspectionItem-${index}`}  >
           {props => <InspectionItem {...{ ...props, ...value, itemIndex: index, isLastItem: index === array.length - 1 }}></InspectionItem>}
         </Stack.Screen>))}
-
+        <Stack.Screen name="MyInspections" component={MyInspections} />
       </Stack.Navigator>
 
 

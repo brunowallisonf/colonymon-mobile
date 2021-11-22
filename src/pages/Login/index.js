@@ -31,7 +31,7 @@ export default function Login({ navigation }) {
           }
         })
         if (status === 200) {
-          navigation.navigate("BroodInfo")
+          navigation.navigate("MyInspections")
         }
       } catch (error) {
         await AsyncStorage.removeItem("@token_key")
@@ -53,7 +53,7 @@ export default function Login({ navigation }) {
     }
     if (data.status === 200) {
       await AsyncStorage.setItem("@token_key", data.data.token);
-      navigation.navigate("BroodInfo")
+      navigation.navigate("MyInspections")
     }
   }
   return (
