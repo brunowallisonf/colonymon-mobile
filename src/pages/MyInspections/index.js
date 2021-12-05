@@ -13,17 +13,18 @@ import { TopBar } from "./styles"
 
 export default function MyInspections({ navigation }) {
     const [dataList, setDataList] = useState([])
+    const getDataList = async () => {
+        const { data } = await api.get("/inspections", {
+            headers: {
+                Authorization: `Bearer ${await AsyncStorage.getItem("@token_key")}`
+            }
+        })
+        setDataList(data.inspections)
+    }
+    navigation.addListener("focus", () => {
+        getDataList()
+    })
     useEffect(() => {
-        const getDataList = async () => {
-            const { data } = await api.get("/inspections", {
-                headers: {
-                    Authorization: `Bearer ${await AsyncStorage.getItem("@token_key")}`
-                }
-            })
-
-            setDataList(data.inspections)
-        }
-
         getDataList()
     }, [])
 
