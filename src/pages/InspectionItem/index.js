@@ -1,4 +1,4 @@
-import { Container, ScrollView } from "./styles"
+import { Container, ScrollView, SubTextLabel } from "./styles"
 
 import React, { useState } from "react"
 
@@ -62,6 +62,7 @@ export default function (props) {
         <ScrollView>
             <Container>
                 <Label>{props.question}</Label>
+                {props.subText && <SubTextLabel>{props.subText}</SubTextLabel>}
                 <RadioGroup><RadioButton checked={metConditions === "yes"} label="Sim"
                     onPress={() => setMetCondition("yes")}></RadioButton><RadioButton checked={metConditions === "no"} label="Não" onPress={() => setMetCondition("no")}>
                     </RadioButton><RadioButton checked={metConditions === "non-applicable"} label="N/A" onPress={() => setMetCondition("non-applicable")}>

@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 export const Label = styled.Text`
-    font-size: 30px;
+    font-size: 33px;
     font-weight: bold;
-    margin-vertical: 30px;
+    text-align: center
 `
 export const Container = styled.SafeAreaView`
     flex-direction: column;
     align-items: center;
     background: #FFD700;
     flex: 1;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
 `
 export const ScrollView = styled.ScrollView`
     background: #FFD700;
@@ -19,3 +18,9 @@ export const ScrollView = styled.ScrollView`
 
 `
 
+export const SubTextLabel = styled.Text`
+    font-size: 25px;
+    font-weight: bold;
+    margin-vertical: 5px;
+    text-align: center;
+`
