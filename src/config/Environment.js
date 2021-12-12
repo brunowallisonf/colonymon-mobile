@@ -1,9 +1,9 @@
 
-export const DEV = true;
+export const DEV = false;
 
 export default {
     staging: {
-        BASE_URL: 'https://colonymon-api.herokuapp.com',
+        BASE_URL: 'http://34.205.147.124:3333',
 
     },
     development: {
