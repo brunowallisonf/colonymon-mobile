@@ -49,7 +49,8 @@ export default function Login({ navigation }) {
     try {
       data = await api.post("/sessions", { email, password: senha })
     } catch (error) {
-      alert("Usuario ou senha inválidos")
+      console.log(error.message)
+      alert(error.message)
     }
     if (data.status === 200) {
       await AsyncStorage.setItem("@token_key", data.data.token);

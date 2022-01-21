@@ -3,7 +3,7 @@ export const DEV = false;
 
 export default {
     staging: {
-        BASE_URL: 'http://34.205.147.124:3333',
+        BASE_URL: 'http://colonymon-api.us-east-1.elasticbeanstalk.com',
 
     },
     development: {
