@@ -27,7 +27,11 @@ export default function Signup({ navigation }) {
             }
 
         } catch (error) {
-            alert("O usuário já existe")
+            if (data.status >= 400 && data.status < 500) {
+                alert("Erro ao fazer cadastro usuário já existe")
+            } else {
+                alert(error.message)
+            }
         }
     }
     return (
