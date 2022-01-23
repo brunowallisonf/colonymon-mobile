@@ -49,8 +49,12 @@ export default function Login({ navigation }) {
     try {
       data = await api.post("/sessions", { email, password: senha })
     } catch (error) {
-      console.log(error.message)
-      alert(error.message)
+      if (data.status >= 400 && data.status < 500) {
+        alert("Erro ao fazer login, verifique suas credenciais e tente novamente")
+      } else {
+        alert(error.message)
+      }
+
     }
     if (data.status === 200) {
       await AsyncStorage.setItem("@token_key", data.data.token);
