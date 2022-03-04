@@ -40,6 +40,10 @@ jobs:
 
       - name: Make Gradlew Executable
         run: cd android && chmod +x ./gradlew
+      
+      - name: Create Build directory
+        run: mkdir -p app/build/outputs/bundle/release/
+
       - name: Sign App Bundle
         id: sign_app
         uses: r0adkll/sign-android-release@v1
